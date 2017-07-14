@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pizza"
+    tools:context="com.pabi.pizzaordering.MainActivity">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:padding="20dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="20sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal"
+                    android:paddingTop="16dp"
+                    android:textAlignment="center">
+
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:padding="16dp"
+                        android:text="@string/quantity"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/decrement"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="#e0e0e0"
+                        android:onClick="decrement"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/quantity_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="0"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/increment"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="#e0e0e0"
+                        android:onClick="increment"
+                        android:text="+"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/toppings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/toppings_text_view"
+                        style="@style/HeaderTextStyle"
+                        android:fontFamily="sans-serif-condensed"
+                        android:paddingBottom="16dp"
+                        android:paddingTop="16dp"
+                        android:text="@string/toppings"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/extra_cheese"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:fontFamily="sans-serif-condensed"
+                        android:onClick="addExtraCheese"
+                        android:text="@string/extra_cheese"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/bacon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:fontFamily="sans-serif-condensed"
+                        android:onClick="addBacon"
+                        android:text="@string/bacon"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/avo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:fontFamily="sans-serif-condensed"
+                        android:onClick="addAvo"
+                        android:text="@string/avo"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/five_sausages"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:fontFamily="sans-serif-condensed"
+                        android:onClick="addFiveSausages"
+                        android:text="@string/five_sausages"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <TextView
+                        android:id="@+id/price_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="16dp"
+                        android:text="@string/initial_price"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="16dp"
+                    android:baselineAligned="false">
+
+                    <Button
+                        android:id="@+id/order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:background="#e0e0e0"
+                        android:fontFamily="sans-serif-condensed"
+                        android:onClick="displayOrderSummary"
+                        android:padding="8dp"
+                        android:text="@string/order"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/email_confirm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="#e0e0e0"
+                        android:onClick="confirmEmail"
+                        android:padding="8dp"
+                        android:text="@string/email_summary"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="14sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/confirmation"
+                    android:layout_width="193dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/order"
+                    android:padding="16dp"
+                    android:text="\n"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
